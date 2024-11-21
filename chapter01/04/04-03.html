@@ -87,5 +87,63 @@
             </tr>
         </tfoot>
     </table>
+
+    <!-- 행이나 열을 합치는 rowspan, colsapn속성 알아보기
+        여러 셀을 합치거나 나누어서 다양한 형태로 바꿀 수 있습니다.
+        행이나 열을 합치는 것은 실제로는 셀을 합치는 것이므로
+        <td>태그나 <th>태그의 속성에서 이루어집니다.
+        행을 합치려면 rowspan속성을 사용하고, 열을 합치려면 colspan
+        속성을 사용해서 몇 개의 셀을 합칠지 지정하면 됩니다.
+        기본형
+        <td rowspan="합칠  셀의 개수">내용</td> 
+        <td colspan="합칠  셀의 개수">내용</td> 
+    -->
+    <hr>
+    <table>
+        <tr>
+            <th colspan="2">제목1</th>
+        </tr>
+        <tr>
+            <td rowspan="2">내용1</td>
+            <td>내용2</td>
+        </tr>
+        <tr>
+            <td>내용2</td>
+        </tr>
+    </table>
+    <!-- 열을 묶어 주는 <col>,<colgroup>태그
+        표에서 특정 열에 배경색을 넣거나 너비를 바꾸려면 원하는 열을
+        선택할 수 있어야 합니다. 그럴 때 사용하는 태그가 <col>태그와
+        <colgroup>태그입니다. <col>태그는 열을 1개만 지정할 때 사용하고
+        <colgroup>태그는 <col>태그를 2개 이상 묶어서 사용합니다.
+        <colgroup>태그는 닫는 태그</colgroup>이 있지만
+        <col>태그에는 닫는 태그가 없다는 점을 주의하세요.    
+        -->
+    <hr>
+    <table>
+        <caption>표 제목</caption>
+        <colgroup>
+            <col style="background-color: beige;">
+            <col span="2" style="width:150px">
+            <!-- <col style="width:150px"> -->
+        </colgroup>
+        <tr>
+            <td>내용1</td>
+            <td>내용2</td>
+            <td>내용2-1</td>
+        </tr>
+        <tr>
+            <td>내용3</td>
+            <td>내용4</td>
+            <td>내용4-1</td>
+        </tr>
+    </table>
+    <!-- <colgroup>,<col>태그는 반드시 <caption>태그 다음에 
+        써야 합니다. <col>태그를 사용할 때는 <colgroup>태그 안에
+        <col>태그를 포함해 표 전체 열의 개수만큼 <col>태그를 넣어야 합니다.
+        스타일 속성을 사용하는 <col>태그가 있다면 span속성을 사용해서
+        묶어 줄 수 잇습니다. 이렇게 똑같은 스타일 속성을 사용할 때는
+        두 번 반복하지 않고 묶어서 작성하면 됩니다.
+    -->
 </body>
 </html>

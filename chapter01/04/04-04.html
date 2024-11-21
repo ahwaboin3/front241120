@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 04-04.html -->
+    <!-- 04-4 이미지 삽입하기
+        웹 사이트에 적절한 이미지가 있으면 정보를 시각적으로 전해 줄 뿐
+        아니라 지루하지 않게 해줍니다. 따라서 웹 사이트에서 이미지의
+        역활은 텍스트만큼 중요합니다. 사이트 전체 디자인뿐만 아니라
+        메뉴나 중요한 요소를 이미지로 처리하여 내용을 강조할 수 있습니다.  
+    -->
+    <!-- 이미지를 삽입하는 <img> 태그 
+        기본형
+        <img src="이미지 파일 경로" alt="대체 텍스트">
+        alt속성은 이미지가 제대로 나오지 않을 때 대체해서 나오는 텍스트이고
+        화면 낭독기등에서 이미지를 대신해서 읽어 줄 텍스트입니다.
+        이미지 크기를 지정하는 width와 height속성을 사용할 수도 있습니다.
+    -->
+    <img src="memory.jpg" alt="노트북 메모리 이미지">
+    <!-- 
+        웹에서 사용하는 이미지 파일 형식
+        종류 | 설명 | 용도
+        jpg/jpeg | 고행상도 사진을 작은 파일 크기로 압축할 수 있어서
+        널리 사용합니다. | 사진이나 그래픽
+        gif | 간단한 애니메이션을 지원합니다. 표시할 수 있는 색상 수가
+        최대 256가지라서 복잡한 이미에는 적합하지 않습니다. | 간단한
+        애니메이션이나 아이콘
+        png | 투명 배경을 지원합니다. 무손실 압축을 사용하므로
+        jpg보다 이미지를 더 나은 화질로 제공할 수 있습니다. | 화질 저하
+        없거나 투명 배경이 필요한 그래픽
+        WebP | gif와 jpg, png의 장점을 하나로 결합한 이미지 형식입니다. 
+        최신 형식에 이미지 확장자입니다. | 고해상도의 이미를 작은 파일
+        크기로 제공할 때
+    -->
+    <!-- 이미지 파일 경로를 나타내는 src속성
+        이미지나 음악, 동영상 파일 등을 웹 문서에 삽입할 때에는
+        경로를 주의해야 합니다. 경로란 현재 html문서에서 이미지 파일이
+        있는 곳까지 어떻게 찾아가야 하는지를 알려줍니다. 이미지 파일의
+        경로를 정확하게 입력하지 않으면 이미지가 화면에 나타나지 않습니다.
+        상대 경로
+        이미지 파일의 경로는 웹 문서 파일의 위치를 기준으로 정해집니다.
+        절대 경로
+        OS의 드라이브 기준으로 작성합니다. 절대 경로는 사용하지 않는다.
+    -->
+    <!-- 절대 경로로 이미지 넣기 -->
+    <h1>절대 경로</h1>
+    <img 
+        src="C:\Users\user\Documents\dev\front241120\chapter01\04\memory.jpg" 
+        alt="노트북 메모리 이미지"
+        >
+    <!-- 상대 경로로 이미지 넣기 -->
+    <!-- 하위폴더 이름하고 슬래쉬를 추가하고 이미지 파일 이름과 확장자를
+        적어 주면 됩니다. -->
+    <h1>같은 폴더</h1>
+    <img src="memory.jpg">
+    <h1>하위 폴더</h1>
+    <img src="images/memory001.jpg">
+    <h1>하위의 하위 폴더</h1>
+    <img src="images/img/memory002.jpg">
+    <h1>하위의 하위의 하위 폴더</h1>
+    <img src="images/img/background/memory003.jpg">
+
+    <!-- 상위폴더로 가기 위해서는 ..을 써주시면 됩니다. -->
+    <h1>상위 폴더</h1>
+    <img src="../supimg/memory004.jpg">
+    <h1>상위의 상위 폴더</h1>
+    <img src="../../sup2img/memory005.jpg">
+    <h1>상위 폴더의 하위 폴더(supimg/img/)</h1>
+    <img src="../supimg/img/memory006.jpg">
+
+    <script src="js/main.js" type="text/javascript"></script>
+
+    <!-- . 는 상대 주소에서 현재 폴더를 가르킨다
+     하지만 생략이 가능하므로 생략해서 많이 쓴다. -->
+    <h1>같은 폴더</h1>
+    <img src="./memory.jpg">
+
+    <!-- 인터넷 주소 -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd5wCmVJgFq4CRZG-t_TrguaY7bO6ACIj4wg&s">
+    <img src="https://survey-phinf.pstatic.net/MjAyNDExMTNfNzUg/MDAxNzMxNDgyNDEzODYw.LLyEF1ZXqfOEtBi95ESFXVZLEkP-Sk4KdAfGs3MZ31cg.EX_Ho7hzpMoPfor5W4EfYDOnHARroSSwlMK_vXsog_4g.JPEG/20241113162013844-130396-9e9a9b79.jpg?type=f1200_300">
+
+    <!-- 
+        https://placehold.co/
+        이미지가 필요해서 구도를 잡을 때 활용할 수 있는 사이트
+        https://placecats.com/
+        사이즈 별로 랜덤한 고양이 이미지를 가져올 수 있는 사이트
+    -->
+    <img src="https://placehold.co/600x400">
+    <img src="https://placehold.co/300x200">
+    <img src="https://placecats.com/300/200">
+    <img src="https://placecats.com/millie/300/150">
+
+    <!-- 이미지를 텍스트로 대신 설명하는 alt 속성
+        웹 문서에 이미지를 삽입할 때는 화면 낭독기와 같은 보조 기기에서
+        이미지를 대신해서 읽어 줄 텍스트를 함께 넣을 수 있습니다.
+        또한 alt속성을 지정하면 인터넷이 불안정하거나 이미지 파일 경로를
+        잘못 넣었을 때처럼 이미지를 제대로 표시할 수 없는 경우에 이미지 대신
+        텍스트가 나타납니다. 이미지를 직접 보지 못하더라도 어떤 이미지를
+        사용했는지 짐작할 수 있습니다.
+        웹 표준에서 alt 속성을 넣어주는 것을 추천합니다. 
+    -->
+    <hr>
+    <img src="6h9345y8.jpg" alt="alt 값">
+    
+    <!-- 이미지 크기를 조절하는 width, height 속성들 
+        <img>태그로 이미지 파일을 삽입하면 원래 이미지 크기대로 표시됩니다.
+        이미지 크기만 조절하고 싶다면 width와 height속성을 사용할 수 있습니다.
+        width는 이미지의 너비를, height는 이미지의 높이를 지정하며, 속성은 2개
+        모두 사용할 수도 있고 1개만 사용할 수도 있습니다. width나 height중
+        1개만 지정하면 나머지 속성은 비율을 자동으로 계산하여 나타냅니다.
+        width와 height 속성에서 사용할 수 있는 단위는 퍼센트(%)와 픽셀(px)이
+        있습니다. 픽셀을 사용할 때는 단위인 px을 쓰지 않고 숫자만 입력합니다.
+        이미지 크기를 표현하는 단위
+        종류 | 설명 | 예시
+        % | 이미지 크기의 값을 퍼센터(%)로 지정하면 현재 웹 브라우저 창의
+        너비와 높이를 기준으로 이미지 크기를 결정합니다. | width="50%"
+        px | 이미지 크기의 값을 픽셀(px)로 지정하면 이미지의 너비와 높이를 해당
+        픽셀 크기만큼 표시합니다. | width="150"
+    -->
+    <hr>
+    <img src="memory.jpg" width="200" height="100">
+    <img src="memory.jpg" width="200">
+    <img src="memory.jpg" height="200">
+    <img src="memory.jpg" width="90%">
+    <!-- 너비를 50%로 지정했으면 웹 브라우저 창 너비의 절반만큼 표시됩니다
+        그래서 웹 브라우저 창의 크기가 달라질 때마다 이미지 크기도 달라집니다.
+        이미지 너비를 픽셀로 지정했을 때는 웹 브라우저 창의 크기와 상관없이 고정된
+        크기로 표시됩니다. 
+    -->
+</body>
+</html>
