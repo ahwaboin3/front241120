@@ -131,5 +131,55 @@
         이미지 너비를 픽셀로 지정했을 때는 웹 브라우저 창의 크기와 상관없이 고정된
         크기로 표시됩니다. 
     -->
+    <!-- 웹 접근성과 대체 텍스트
+        웹 접근성 지침 중 첫 번째는 텍스트가 아닌 콘텐츠에는 대체 텍스트를 제공해야
+        한다는 것입니다.
+        아이콘이나 불릿 이미지, 화면을 꾸미는 용도로 삽입된 이미지는 따로 대체
+        텍스트를 제공하지 않습니다. 하지만 데체 텍스트를 제공하지 않는다고 해서
+        alt속성을 빼 버리면 화면 낭독기에서는 이미지 파일 이름을 대체 텍스르로
+        제공해 버립니다. 이럴 때는 alt=""처럼 빈 따옴표로 남겨 두면 됩니다.
+    -->
+    <!-- 웹 요소에 설명 글 붙이기
+        <figure>태그와 <figcaption>태그 
+    -->
+    <figure>
+        <img src="https://placecats.com/millie/300/150">
+        <figcaption>귀여운 고양이</figcaption>
+    </figure>
+    <figure>
+        <img src="https://placecats.com/millie/400/150">
+        <img src="https://placecats.com/millie/300/150">
+        <img src="https://placecats.com/millie/200/150">
+        <figcaption>귀여운 고양이들</figcaption>
+    </figure>
+    <!-- srcset 속성 사용해서 이미지 삽입하기
+        기본형
+        <img src="기본 이미지" srcset="[파일1,파일2,파일3,...]"
+        alt="대체 텍스트">
+        srcset 속성은 이미지를 여러 개 지정하고 조건에 따라 다른 이미지를
+        표시합니다. 이때 사용하는 조건은 너비와 화면 픽셀 비율, 2가지
+        입니다. 
+    -->
+    <!-- w 서술자 사용하기
+        조건을 지정할 때 w를 사용하면 파일이름 너비 형식으로 이미지를
+        삽입합니다. 여기에서 w는 이미지 파일의 너비를 가리킵니다. 
+    -->
+    <img 
+        src="images/francesco1920.jpg" 
+        srcset="images/francesco640.jpg 700w"
+    >
+    <!-- x 서술자 사용하기 
+        x는 장치의 픽셀 비율을 가리킵니다. x 값이 클수록 고화질 이미지를
+        연결할 수 있습니다.  
+    -->
+    <img 
+        src="images/francesco1920.jpg" 
+        srcset="images/francesco640.jpg 1x,
+            images/francesco1920.jpg 2x"
+    >
+    <!-- 픽셀 비율값을 알고 싶다면
+     www.mydevice.io 사이트에 접속하면 현재 사용하는 화면의 픽셀 비율을
+     알 수 있습니다.
+    -->
 </body>
 </html>
