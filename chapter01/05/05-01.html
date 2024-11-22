@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 05/05-01.html -->
+    <!-- 05 입력 양식 작성하기
+    입력 양식이란 특정 항목에 사용자가 뭔가를 입력할 수 있게 만든 것으로
+    '폼'이라고도 합니다. 익숙하게 사용하는 로그인 창이나 검색 창이
+    대표적이죠. 
+    -->
+    <!-- 폼 삽입하기 
+        폼 형태는 html태그로 만들지만, 폼에 입력한 사용자 정보는 asp나
+        php, jsp, thymleaf 같은 서버 프로그래밍을 이용해 처리합니다.
+        ajax 방식으로 javascript 언어를 이용해서 json데이터 형태로
+        클라이언트와 서버(restful api)와 통신하는 방식도 많이 쓰인다.
+    -->
+    <!-- 폼을 만드는 <form> 태그 
+        <form>과 </from>태그 사이에 여러 가지 폼 요소를 넣습니다.
+        기본형 <form [속성="속성값"]>여러 폼 요소</form>
+        <form> 태그의 속성
+        종류 | 설명
+        method | 사용자가 입력한 내용을 서버 쪽 프로그램으로 어떻게
+        넘겨줄 것인지 지정합니다. method에서 사용할 수 있는
+        속성값은 get과 post입니다.
+        - get:주소 표시줄에 사용자가 입력한 내용이 그대로 드러난다.
+        - post:입력한 내용의 길이에 제한받지 않고 사용자가 입력한
+        내용도 드러나지 않습니다.
+        name | 자바스크립트로 폼을 제어할 때 폼의 이름을 지정합니다.
+        action | <form>태그 안의 내용을 처리해 줄 서버 프로그램을
+            지정합니다.
+        target | action속성에서 지정한 스크립트 파일을 현재 창이 아닌
+        다른 위치에서 열도록합니다.
+    -->
+    <!-- 자동 완성 기능을 나타내는 autocomplete 속성 
+        폼에서 내용을 입력할 때 예쩐에 입력한 내용을 자동으로 표시해
+        주는 것을 자동 완성 기능이라고 합니다. 사용자가 입력한 내용을
+        기억했다가 비슷한 글자가 입력되면 이전에 입력한 내용을 힌트로
+        보여 주죠.
+        자동 완성 기능은 autocomplete속성을 사용하며 기본 속성값은 on
+        입니다. 
+    -->
+    <form action="">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <!-- 자동 완성 기능 끄기 -->
+    <form autocomplete="off">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <!-- 폼 요소를 그룹으로 묶는 <fieldset>,<legend>태그
+        하나의 폼 안에서 여러 구역을 나누어 표시할 때 <fieldset>태그를
+        사용합니다.
+        기본형
+        <fieldset>
+            <legend>그룹 이름</legend>
+        </fieldset>    
+    -->
+    <form>
+        <fieldset>
+            <legend>그룹1</legend>
+            <input type="text">
+            <input type="text">
+        </fieldset>
+        <fieldset>
+            <legend>그룹2</legend>
+            <input type="text">
+            <input type="text">
+        </fieldset>
+    </form>
+    <!-- 폼 요소에 레이블을 붙이는 <label> 태그 
+        <label>태그는 <input>태그와 같은 폼 요소에 레이블을 붙일 때
+        사용합니다. 레이블이란 입력란 가까이에 표시하는 텍스트를 말합니다.
+        <label>태그를 사용하면 폼 요소와 레이블 텍스트가 서로 연결
+        되었다는 것을 웹 브라우저가 알 수 있습니다.
+        <label>태그는 사용 방법이 2가지
+        첫 번째 방법의 기본형
+        <label>레이블명<input></label>
+    -->
+    <form>
+        <label>
+            아이디(6자 이상)<input type="text">
+        </label>
+    </form>
+    <!-- 두번째 방법의 기본형
+    <label for="id명">레이블명</label>
+    <input id="id명"> 
+    -->
+    <form>
+        <label for="user-id">아이디(6자 이상)</label>
+        <input type="text" id="user-id">
+    </form>
+    <!-- html에서는 다른 단어가 조합될 때 -를 붙어 줍니다
+     케밥표기법을 사용합니다.
+    -->
+</body>
+</html>
