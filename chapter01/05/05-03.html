@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 05-03.html -->
+    <!-- 05-3 input 태그의 주요 속성 -->
+    <!-- 입력 커서를 자동으로 갖다 놓는 autofocus 속성
+    autofocus 속성을 사용하면 페이지를 불러오자마자 폼에서 원하는 요소에
+    입력 커서를 놓을 수 있습니다. 
+    -->
+    <input type="text" autofocus>
+    <!-- 힌트를 표시해 주는 placeholder 속성
+         사용자가 어떤 것을 입력해야 할지 안내해 주고, 입력을 시작하면
+         사라집니다.
+    -->
+    <h1>value 속성</h1>
+    <input type="text" value="이메일 형식으로 입력하세요">
+    <h1>placeholder 속성</h1>
+    <input type="text" placeholder="이메일 형식으로 입력하세요">
+
+    <!-- 읽기 전용 필드를 만들어 주는 readonly속성
+        필드를 읽기 전용으로 바꿉니다. 텍스트 필드나 텍스트 영역에 내용이
+        표시되어 있어도 사용자는 그 내용을 볼 수만 있고 입력은 할 수
+        없습니다. 
+    -->
+    <input type="text" value="사용자 아이디" 
+    readonly style="background-color: aliceblue;">
+    <!-- 필수 입력 필드를 지정하는 required 속성
+        폼에 내용을 입력한 후 submit버튼을 클릭하면 서버로 폼을 전송하는데
+        이때 필수 필드에 필요한 내용이 모두 채워졌는지 검사해야 합니다.
+        이렇게 반드시 입력해야 하는 내용에는 required속성을 지정해
+        필수 필드로 만들 수 있습니다.
+    -->
+    <form>
+        <label>
+            *필수로 입력해야 하는 항목입니다.
+            <input type="text" required>
+            <input type="submit">
+        </label>
+    </form>
+</body>
+</html>
