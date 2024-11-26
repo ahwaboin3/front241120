@@ -45,9 +45,40 @@ h2{
 .sub-title{
     color:gold;
 }
+/* - 소스 코드의 작성 순서는 어떠한가?
+스타일 시트에서 중요도와 적용 범위가 같다면 그 다음은 스타일을 정의한 코드
+순서로 우선순위가 정해집니다. 코드에서 나중에 작성한 스타일이 먼저 작성한
+스타일을 덮어 씁니다.
+*/
+h3{
+    color:aquamarine;
+}
+h3{
+    color:cadetblue;
+}
+/* 스타일 상속
+웹 문서에서 사용하는 여러 태그는 서로 포함 관계가 있습니다.
+이때 포함하는 태그는 부모요소, 포함된 태그를 자식 요소라고 합니다.
+스타일 시트에서는 자식 요소에 스타일을 별도로 지정하지 않으면
+부모 요소의 스타일 속성이 자식 요소로 전달되는데, 이것을 스타일 상속
+이라고 합니다.
+*/
+body{
+    background-color: darkgray;
+}
+.d1{
+    color:green;
+}
 </style>
 </head>
 <body>
+    <div class="d1">
+        div 안의 글
+        <h4>스타일 상속</h4>
+    </div>
+
+    <h3>소스 코드의 작성 순서</h3>
+
     <h2>타입 스타일</h2>
     <h2 class="sub-title">class 스타일</h2>
     <h2 id="color-skyblue" class="sub-title">id 스타일</h2>
