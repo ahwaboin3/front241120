@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+/* 06-02.html */
+/* 06-2 css 기본 선택자 알아 보기
+선택자는 웹 문서에서 어느 부분에 스타일을 적용할지 알려 주는 것이다.
+*/
+/* 전체 요소에 스타일을 적용하는 전체 선택자
+전체 선택자는 말 그대로 스타일을 문서의 모든 요소에 적용할 때 사용합니다.
+주로 모든 하위 요소에 스타일을 한꺼번에 적용할 때 사용하죠. 전체 선택자는
+*를 사용합니다.
+전체 선택자는 웹 브라우저의 기본 스타일을 초기화할 때 자주 사용합니다.
+*/
+*{
+    margin:0;
+}
+/* 태그와 요소는 어떻게 다른가?
+html을 사용하다 보면 태그(tag)나 요소(element)라는 용어를 자주 사용합니다.
+태그와 요소는 비슷해 보이지만 다른 점이 있씁니다. 태그는 말 그대로 태그
+자체를 가리키는 반면, 요소는 태그를 적용한 것을 가리킵니다. 
+<p>텍스트 단락 지정하기</p>
+이 코드에서 <p>와 </p>태그는 태그 자체를 말하는 것이고 태그를 포함해
+<p>태그를 적용한 '텍스트 단락 지정하기'부분은 p요소라고 합니다.
+따라서 <p>태그를 적용한 스타일이라는 표현은 태그 자체를 적용하는 스타일이
+아니므로 틀린 말입니다. p요소에 적용하는 스타일로 표현하는 것이 맞습니다.
+*/
+/* 특정 요소에 스타일을 적용하는 타입 선택자
+타입 선택자(type selector)는 특정 태그를 사용한 모든 요소에 스타일을
+작용합니다. 다시 말해 타입 선택자를 사용해 스타일을 지정하면
+해당 태그를 사용한 모든 요소에 적용됩니다.
+기본형
+태그명 {스타일 규칙}
+*/
+p{
+    color: aquamarine;
+}
+/* 특정 부분에 스타일을 적용하는 클래스 선택자
+기본형
+.클래스명{스타일 규칙}
+태그 안에 class="클래스명" 속성을 부여합니다.
+클래스 선택자를 사용해 만든 스타일을 클래스 스타일이라고 하는데
+클래스 스타일은 여러 곳에 적용할 수 있습니다.
+*/
+.bg-red{
+   color:red; 
+}
+/* <span>태그는 줄을 바꾸지 않으면서 특정 부분을 묶을 때 사용합니다. */
+/* 특정 부분에 스타일을 한 번만 적용할 수 있는 id 선택자
+웹 요소에 id="아이디명" 속성을 부여 할 수 있다.
+기본형
+#아이디명{스타일 규칙}
+클래스 선택자와 id선택자의 가장 큰 차이는 클래스 선택자가 문서에서 여러 번
+적용할 수 있는 반면, id선택자는 문서에서 한 번만 적용할 수 있다는 것입니다.
+id선택자는 중복해서 적용할 수 없으므로 주로 문서의 레이아웃과 관련된
+스타일을 지정하거나 웹 요소에 자바스크립트 프로그램을 사용하면서
+요소를 구별할 때 사용합니다.
+*/
+#container{
+    /* 테두리 굵기와 스타일과 색깔 */
+    border:1px solid black;
+    height: 300px;
+    width: 80%;
+    margin:10px auto;
+    text-align: center;
+}
+/* 같은 스타일 규칙을 사용하는 요소를 묶어 표현하기
+선택자를 이용해 스타일을 정의하다 보면 여러 선택자에서 같은 스타일 규칙을
+사용하는 경우가 있습니다. 이럴 때는 쉼표(,)로 구분해 여러 선택자를
+나열한 후 스타일 규칙을 한 번만 정의하면 됩니다.
+*/
+h2{
+    color:cornflowerblue;
+}
+h3{
+    color:cornflowerblue;
+}
+h2,h3{
+    color:darkorange;
+}
+</style>
+</head>
+<body>
+    <h2>h2 제목</h2>
+    <h3>h3 제목</h3>
+
+    <div id="container">
+        <h1>사이트 제목1</h1>
+    </div>
+    <div id="con">
+        <h1 id="title">사이트 제목2</h1>
+    </div>
+
+    <h1 class="bg-red">Lorem Ipsum</h1>
+    <p>Lorem Ipsum is <span class="bg-red">simply dummy text</span> of the printing and typesetting industry. </p>
+    <p class="bg-red">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+    <p class="bg-red">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+    <p class="bg-red">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+    <img src="https://placecats.com/neo_banana/300/200">
+</body>
+</html>
