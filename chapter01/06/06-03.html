@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+/* 06-03.html */
+/* 06-3 캐스캐이딩 스타일 시트 알아 보기
+지금까지 살펴본 스타일 시트는 사실 CSS라는 명칭으로 더 잘 알려져 있습니다.
+스타일 시트(SS, style sheet) 앞에 캐스케이딩(cascading)이라는 용어가
+하나 더 붙은 것이 css입니다.
+*/
+/* 캐스케이딩의 의미
+스타일 시트에서는 우선순위가 위에서 아래, 즉 계단식으로 적용된다는 의미로
+사용합니다. CSS에서는 웹 요소에 둘 이상의 스타일을 적용할 때 우선순위를
+결정합니다. 
+스타일 우선순위: 스타일 규칙의 중요도와 적용 번위에 따라 우선순위가 결정되고
+, 그 우선순위에 따라 위에서 아래로 스타일을 적용합니다.
+스타일 상속:태그의 포함 관계에 따라 부모 요소의 스타일을 자식 요소로
+위에서 아래로 전달합니다.
+*/
+/* 스타일 우선순위 
+- 얼마나 중요한가?
+사용자가 지정한 스타일 > 제작자의 스타일 > 웹 브라우저가 기본 스타일
+
+- 적용 범위가 어디까지인가?
+중요도가 같은 스타일이라면 스타일 적용 범위에 따라 우선순위를 정할 수
+있습니다. 스타일 적용 범위가 좁을수록, 즉 필요한 요소에만 정확히 적용할
+스타일일수록 우선순위가 높아집니다.
+!important > 인라인 스타일 > id 스타일 > 클래스 스타일 > 타입 스타일
+*/
+h1{
+    color:darkcyan !important;
+}
+h1{
+    color:darkorange;
+}
+h2{
+    color:brown;
+}
+#color-skyblue{
+    color: skyblue;
+}
+.sub-title{
+    color:gold;
+}
+</style>
+</head>
+<body>
+    <h2>타입 스타일</h2>
+    <h2 class="sub-title">class 스타일</h2>
+    <h2 id="color-skyblue" class="sub-title">id 스타일</h2>
+    <h2 style="color:blueviolet">인라인 스타일</h2>
+    <h1>!important</h1>
+</body>
+</html>
