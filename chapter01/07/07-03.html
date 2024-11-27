@@ -199,9 +199,20 @@ full-width | 가능한 한 모든 문자를 전각 문자로 변환합니다.
 .transform{
     text-transform: capitalize;
 }
+/* 
+글자 간격을 조절하는 letter-spacing, word-spacing 속성
+letter- 속성은 단어와 단어 사이의 간격을 조절하고, word- 속성은
+단어와 단어 사이의 간격을 조절하는데, css에서는 주로 letter-
+속성을 사용해 자간을 조절합니다.
+px, em과 같은 단위나 퍼센트(%)로 크깃값을 조절합니다.
+*/
+.spacing{
+    letter-spacing: 10px;
+}
 </style>
 </head>
 <body>
+    <h1 class="spacing">글자 간격을 조절하는 letter-spacing, word-spacing 속성</h1>
     <h1 class="transform">
         none  underline overline line-through
     </h1>
