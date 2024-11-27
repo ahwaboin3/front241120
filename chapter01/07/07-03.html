@@ -142,9 +142,75 @@ start와 end입니다.
     text-align: center;
     line-height: 300px;
 }
+/* 
+텍스트에 밑줄, 윗줄, 취소선을 표시하는 text-decoration 속성
+text-decoration속성 텍스트에 밑줄, 윗줄을 긋거나 취소선을
+표시합니다. 그리고 텍스트에 하이퍼링크를  적용하면 기본적으로
+밑줄이 생기는데 이 속성을 사용하면 없앨 수 있습니다.
+*/
+.none{
+    text-decoration: none;
+}
+.underline{
+    text-decoration: underline;
+}
+.overline{
+    text-decoration: overline;
+}
+.line-through{
+    text-decoration: line-through;
+}
+/* 
+텍스트에 그림자 효과를 추가하는 text-shadow속성
+그림자 효과는 본문에서 자주 사용하면 지저분해 보이지만 사이트
+제목처럼 강조해야 할 글자에 사용하면 눈에 띄게 만들 수 있습니다.
+기본형
+text-shadow: none | <가로 거리> <세로 거리> <번짐 정도> <색상>
+종류 | 설명
+<가로 거리> | 텍스트부터 그림자까지의 가로 거리를 뜻하며 필수
+속성입니다. 양숫값은 글자의 오른쪽에, 음숫값은 글자의 왼쪽에
+그림자를 만듭니다.
+<세로 거리> | 텍스트부터 그림자까지의 세로 거리를 뜻하며 필수
+속성입니다. 양숫값은 글자의 아래쪽에, 음수값은 글자의 위쪽에
+그림자를 만듭니다.
+<번짐 정도> | 그림자가 번지는 정도입니다. 양숫값을 사용하면
+그림자가 모든 방향으로 퍼져 나가므로 크게 표시됩니다. 반대로
+음숫값은 그림자가 모든 방향으로 축소되어 보입니다. 기본값은
+0입니다. 
+<색상> | 그림자 색상을 지정합니다. 한 가지만 지정할 수도 있고
+공백으로 구분해 여러 색상을 지정할수도 있습니다 기본값은 현재
+글자 색입니다.
+*/
+.shadow{
+    text-shadow: -10px -10px 10px #ff5837;
+}
+/* 텍스트의 대소 문자를 변환하는 text-transform 속성
+텍스트에서 영문자를 표기할 때 대소 문자를 원하는 대로 바꿀 수
+있습니다. text-transform속성은 텍스트를 대소 문자 또는 전각
+문자로 변환합니다.
+종류 | 설명
+capitalize | 첫 번째 글자를 대문자로 변환합니다.
+uppercase | 모든 글자를 대문자로 변환합니다.
+lowercase | 모든 글자를 소문자로 변환합니다.
+full-width | 가능한 한 모든 문자를 전각 문자로 변환합니다.
+전각 문자란 가로와 세로의 길이 비율이 같은 글자이고, 반각 문자는
+가로와 세로의 길이 비율이 1:2인 글자를 말합니다.
+*/
+.transform{
+    text-transform: capitalize;
+}
 </style>
 </head>
 <body>
+    <h1 class="transform">
+        none  underline overline line-through
+    </h1>
+    <h1 class="shadow">텍스트에 그림자 효과를 추가하는 text-shadow속성</h1>
+
+    <a class="none" href="#">text-decoration 속성</a>
+    <h1 class="underline">text-decoration 속성</h1>
+    <h1 class="overline">text-decoration 속성</h1>
+    <h1 class="line-through">text-decoration 속성</h1>
     <h1 class="title">Site Title</h1>
     <p class="small-line">text-align 속성은 단락의 텍스트 정렬 방법을 지정합니다. text-align
         속성을 사용하면 왼쪽 정렬, 오른쪽 정렬, 양쪽 정렬, 가운데 정렬등을
