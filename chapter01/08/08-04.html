@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+/* 08-04.html */
+/* 08-4 웹 문서의 레이아웃 만들기
+웹 요소의 배치 방법을 알아보겠습니다.
+*/
+
+/* 블록 레벨과 인라인 레벨을 바꾸는 dispaly 속성 
+display속성은 사용하면 블록 레벨 요소와 레벨 요소를
+서로 바꿔서 사용할 수 있습니다. display속성은 웹 요소를
+화면에 어떤 모양으로 보여 줄지 지정하는 속성입니다.
+종류 | 설명
+block | 블록 레벨 요소로 표시합니다.
+inline | 인라인 레벨 요소로 표시합니다.
+inline-block | 인라인 레벨처럼 나란히 배치하지만 블록
+레벨처럼 너비와 높이를 지정할 수 있습니다.
+none | 해당 요소를 화면에 표시하지 않습니다.
+*/
+nav > ul {
+    list-style: none;
+}
+nav ul li{
+    width:100px;
+    height: 40px;
+    border: 1px solid gray;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px;
+    display: inline-block;
+}
+/* 왼쪽이나 오른쪽으로 배치하는 float속성
+웹 문서를 만들다 보면 단락의 왼쪽이나 오른쪽에 이미지를
+나란히 표시해야 할 경우가 있습니다. 그런데 <p>태그는
+블록 레벨 요소이므로 이미지와 나란히 한 줄에 배치할 수
+없습니다. 이럴 때는 float속성을 사용하여 이미지를 왼쪽이나
+오른쪽으로 배치하고 그 주변에 텍스트로 둘러싸도록 할 수
+있습니다.
+종류 | 설명
+left | 해당 요소를 문서의 왼쪽에 배치합니다.
+right | 해당 요소를 문서의 오른쪽에 배치합니다.
+none | 해당 요소를 좌우 어느 쪽에도 배치하지 않습니다.
+기본값입니다.
+*/
+/* 여기에서 float속성을 사용하면 기본 흐름에서 빠집니다 
+이미지에 float:left 속성을 지정하면 기본 흐름에서
+두 번째 텍스트 단락을 표시할 곳이 이미지가 위치합니다.
+그리고 내용이 겹쳐 보이지 않도록 이미지의 오른쪽에
+텍스트가 표시됩니다. 
+*/
+img{
+    float: left;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <img src="https://placecats.com/neo_banana/300/200">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <nav>
+        <ul>
+            <li>링크1</li>
+            <li>링크2</li>
+            <li>링크3</li>
+            <li>링크4</li>
+        </ul>
+    </nav>
+    <ul>
+        <li>링크1</li>
+        <li>링크2</li>
+        <li>링크3</li>
+        <li>링크4</li>
+    </ul>
+</body>
+</html>
