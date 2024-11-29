@@ -21,11 +21,55 @@
     text-align: center;
     line-height: 300px;
 }
+/* 
+배경색의 적용 범위를 조절하는 background-clip속성
+종류 | 설명
+border-box | 박스 모델의 가장 외곽인 테두리까지 적용합니다.
+기본값입니다.
+padding-box | 박스 모델에서 테두리를 뺀 패딩 범위까지 적용합니다.
+content-box | 박스 모델에서 내용(콘텐츠) 부분에만 적용합니다.
+*/
+.squre{
+    width: 300px;
+    height: 200px;
+    background-color: blueviolet;
+    float: left;
+    margin:10px;
+}
+.clear{
+    clear: both;
+}
+#border{
+    border:10px dashed black;
+    background-clip: border-box;
+}
+#padding{
+    border:10px dashed black;
+    background-clip:padding-box;
+}
+#content{
+    border:10px dashed black;
+    background-clip:content-box;
+    padding: 10px;
+}
 </style>
 </head>
 <body>
+    <div>
+        <div class="squre" id="border"></div>
+        <div class="squre" id="padding"></div>
+        <div class="squre" id="content"></div>
+    </div>
+
+    <div class="clear">
+        <img src="https://placecats.com/neo_banana/300/200">
+    </div>
+    <div>
+        <img src="https://placecats.com/neo_banana/300/200">
+    </div>
+
     <div id="bg-div">
-        <h1 id="bg-h1">backgroun-color 속성</h1>
+        <h1 id="bg-h1">backgroun-color <span>속성</span></h1>
     </div>
 </body>
 </html>
