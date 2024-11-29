@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+/* 08-05.html */
+/* 웹 요소의 위치 지정하기
+position속성을 사용하면 웹 문서에서 요소의 위치를 자유롭게
+정할 수 있습니다.
+*/
+/* 웹 요소의 위치를 정하는 left, right, top, bottom 속성
+position 속성으로 기준 위치를 정한 뒤 위치를 left, right,
+top, bottom 속성에서 선택하고 속성값을 지정하면 됩니다.
+*/
+#pos1{
+    position:absolute;
+    left: 50px;
+    top: 50px;
+    border: 1px solid black;
+}
+#pos2{
+    position:absolute;
+    right: 50px;
+    top: 200px;
+    border: 1px solid black;
+    width: 150px;
+}
+#wrap{
+    position: relative;
+}
+/* 배치 방법을 지정하는 position 속성
+종류 | 설명
+static | 문서의 흐름에 맞춰 배치합니다. 기본값입니다.
+relative | 위칫값을 지정할 수 있다는 점을 제외하면 static과
+같습니다.
+absolute | relative값을 사용한 상위 요소를 기준으로 위치를
+지정해 배치합니다.
+fixed | 브라우저 창을 기준으로 위치를 지정해 배치합니다.
+*/
+#static{
+    position: static;
+}
+#rel1{
+    position: relative;
+    background-color: antiquewhite;
+}
+#rel2{
+    position: relative;
+    top:-50px;
+    background-color: rgb(0,0,0,0.5);
+}
+#fixed{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+</style>
+</head>
+<body>
+    <p id="static">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    <p id="rel1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    <p id="rel2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+    <button id="fixed"><a href="#static">⬆</a></button>
+    
+    <div id="wrap">
+        <p id="pos1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p id="pos2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+</body>
+</html>
