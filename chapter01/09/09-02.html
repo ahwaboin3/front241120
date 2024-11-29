@@ -15,9 +15,114 @@ background-image:url('이미지 파일 경로')
 body{
     background-image: url('images/202107018657_500.jpg');
 }
+/* 
+배경 이미지의 반복 방법을 지정하는 background-repeat속성
+종류 | 설명
+repeat | 브라우저 화면에 가득 찰 때까지 가로와 세로로 반복합니다.
+기본값입니다.
+repeat-x | 브라우저 화면 너비에 가득 팔 때까지 가로로 반복합니다.
+repeat-y | 브라우저 화면 높이에 가득 찰 때까지 세로로 반복합니다.
+no-repeat | 한 번만 표시하고 반복하지 않습니다.
+*/
+.container{
+    margin:0 auto;
+    width: 800px;
+    height : 1500px;
+    background-image: 
+        url('https://placecats.com/neo_banana/300/200');
+    /* background-repeat: no-repeat; */
+    background-repeat: repeat-y;
+}
+/* 배경 이미지의 위치를 조절하는 background-position 속성 
+기본형
+background-positon:<수평 위치> <수직 위치>;
+위치 : left | center | right | <백분율> | <길이의 값>
+*/
+.container2{
+    margin:20px auto;
+    width: 800px;
+    height : 200px;
+    background-image: 
+        url('https://placecats.com/neo_banana/300/200');
+    background-repeat: no-repeat;
+    background-position: right center;
+    line-height: 200px;
+    text-align: center;
+}
+/* 
+배경 이미지의 적용 범위를 조절하는 background-origin 속성
+종류 | 설명
+content-box | 박스 모델에서 내용 부분에만 배경 이미지를
+표시합니다.
+padding-box | 박스 모델에서 패딩까지 배경 이미지를 표시합니다.
+기본 값입니다.
+border-box | 박스 모델에서 테두리까지 배경 이미지를 표시합니다.
+*/
+/*
+배경 이미지를 고정하는 background-attachment 속성
+이 속성을 사용하면 배경 이미지를 고정할 수 있습니다.
+종류 | 설명
+scroll | 화면을 스크롤하면 이미지도 스크롤됩니다. 기본값입니다.
+fixed | 화면을 스크롤하면 배경 이미지는 고정되고 내용만
+스크롤됩니다.
+*/
+.container3{
+    margin:20px auto;
+    width: 800px;
+    height : 800px;
+    background-image: 
+        url('https://placecats.com/neo_banana/300/200');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/* 
+background 속성 하나로 배경 이미지 제어하기
+background라는 속성 하나로 중려 사용할 수 있습니다.
+*/
+.container4{
+    margin:20px auto;
+    width: 800px;
+    height : 800px;
+    background: 
+    url('https://placecats.com/neo_banana/300/200')
+    no-repeat
+    fixed
+    center center;
+}
+/* 
+배경 이미지 크기를 조절하는 backgorund-size 속성
+종류 | 설명
+auto | 원래 배경 이미지 크기만큼 표시합니다. 기본값입니다.
+contain | 요소 안에 배경 이미지가 다 들어오도록 이미지를
+확대,축소합니다.
+cover | 배경 이미지로 요소를 모두 덮도록 이미지를 확대, 축소합니다.
+<크기> | 이미지의 너비와 높이를 지정합니다. 값이 하나만 주어질
+경우 너빗값으로 인식하며, 이미지의 너비와 너빗값에 맞춘 높잇값도
+자동 계산합니다.
+<백분율> | 배경 이미지가 들어갈 요소의 크기를 기준으로 값을
+백분율로 지정하고 그 크기에 맞도록 배경 이미지를 확대, 축소합니다.
+*/
+.container4{
+    margin:20px auto;
+    width: 320px;
+    height : 220px;
+    background: 
+    url('https://placecats.com/neo_banana/300/200')
+    no-repeat;
+    border: 1px solid red;
+    background-size: cover;
+}
 </style>
 </head>
 <body>
-    
+    <div class="container5"></div>
+    <div class="container4"></div>
+    <div class="container3">
+        <h1>귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 귀여운 고양이 </h1>
+    </div>
+    <div class="container2">
+        <h1>귀여운 고양이</h1>
+    </div>
+    <div class="container"></div>
 </body>
 </html>
