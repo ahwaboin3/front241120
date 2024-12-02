@@ -120,9 +120,63 @@ space-evenly | 항목을 고르게 정렬합니다. 각 항목의 여백은
     justify-content: center;
     margin: 0 auto;
 }
+/* justify-content 속성과 margin속성 함께 사용하기
+이 속들을 함께 사용하면 좀 더 다양하게 적용할 수 있습니다.
+justify-content속성은 플렉스 컨테이너에 사용하고 margin
+속성은 플렉스 항목에 사용합니다.
+*/
+#flex4{
+    width:1000px;
+    border:1px solid black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+/* 이때 1박스만 왼쪽으로 배치하고 싶다면 1 박스의
+오른쪽 마진을 auto로 지정합니다. */
+#logo{
+    margin-right: auto;
+}
+/* 
+- 플렉스 레이아웃을 활용해 항상 중앙에 표시하기
+그동안 css를 사용해서 화면 요소를 세로 방향으로 중앙에
+배치하는 것이 까다로웠는데 플렉스 박스 레이아웃을 사용하면
+간단해집니다.
+*/
+#flex5{
+    width: 800px;
+    height:600px;
+    border: 1px dotted black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 플렉스 항목 간에 여백을 두는 gap속성
+플렉스 컨테이너 안에 있는 여러 플렉스 항목의 간격을 조절할
+때 gap속성을 사용합니다.
+가로세로 간격을 따로 조절하고 싶다면 row-gap과 column-gap
+으로 값을 따로 지정하면 됩니다.
+
+- 플렉스 박스에서는 gap속성이 추천되는 이유
+마진으로 간격을 설정할 경우 마진 병합을 고려해서 계산해야
+한다. 마진을 사용하면 옆에 다른 요소가 없더라도 요소
+주변에 간격이 적용됩니다. 반면에 gap을 사용하면 인접한
+요소가 있을 때만 간격이 적용됩니다. gap속성을 사용하면
+코드가 훨씬 간결하고 일관성이 있습니다.
+*/
 </style>
 </head>
 <body>
+    <div id="flex5">
+        <button>Contact us...</button>
+    </div>
+
+    <div id="flex4">
+        <div class="box" id="logo"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+    </div>
+
     <div id="flex3">
         <div class="box"><p>1</p></div>
         <div class="box"><p>2</p></div>
