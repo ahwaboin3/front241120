@@ -65,9 +65,9 @@ orientation : landscape | 단말기의 가로 모드를 지정합니다.
 기본값입니다.
 */
 /* 미디어 쿼리의 중단점
-스마트폰 min-width 세로 320px, 가로 480px
-태블릿: 세로 768px, 가로 1024px
-데스크톱 : 1024px이상
+스마트폰 min-width 세로 576px, 가로 768px
+태블릿: 세로 992px, 가로 1200px
+데스크톱 : 1400px이상
 */
 /* 미디어 쿼리 적용하기 
 웹 문서에 직접 정의하기
@@ -77,11 +77,32 @@ orientation : landscape | 단말기의 가로 모드를 지정합니다.
 }
 */
 </style>
-<style media="screen and (max-width:500px)">
-/* 화면의 가로 너비가 320px 이하일 때 CSS 적용 */
+<style media="screen and (max-width:576px)">
+/* 화면의 가로 너비가 576px 이하일 때 CSS 적용 */
 body {
     background-color: darkgray;
 }
+</style>
+<style>
+/* @meida문을 사용해 조건별로 스타일을 지정해 놓고
+그중에 선택해서 적용하는 것입니다.
+*/
+@media screen and (min-width:1440px){
+    body{
+        background-color: chartreuse;
+    }
+}
+</style>
+<!-- 외부 css파일 연결하기 -->
+<link rel="stylesheet" href="css/mobile.css"
+    media="screen and (max-width:576px)" />
+<style>
+/* 
+외부 css파일을 연결하는 또 다른 방법
+@import문을 사용할 수 있습니다. @import문은 css를 정의하는
+<style>과 <//style>태그 사이에서 다음과 같이 사용합니다.
+*/
+@import url("css/tablet.css") screen and (min-width:576px);
 </style>
 </head>
 <body>
