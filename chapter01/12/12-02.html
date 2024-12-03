@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+/* 12-02.html */
+/* 12-2 속성 선택자
+특정 속성이 있는 요소를 선택하는 [속성] 선택자
+대괄호([])사이에 원하는 속성을 입력하면 됩니다.
+*/
+a[target]{
+    background-color: aquamarine;
+}
+/* 
+특정 속성값이 있는 요소를 선택하는 [속성=속성값] 선택자
+*/
+a[target=_self]{
+    color:darkorange;
+}
+/* 
+12-3 가상 클래스와 가상 요소
+
+사용자 동작에 반응하는 가상 클래스
+사용자가 웹 요소를 클릭하거나 마우스 포인터를 올려놓는 등
+특정 동작을 할 때 스타일이 바뀌도록 만들고 싶다면
+가상 클래스 선택자를 사용하세요.
+
+1. 방문하지 않은 링크에 스타일을 적용하는 :link 가상 클래스 선택자
+2. 방문한 링크에 스타일을 적용하는 :visited 가상 클래스 선택자
+3. 특정 요소에 마우스 포인터를 올려놓으면 스타일이 적용하는
+:hover 가상 클래스 선택자
+4. 웹 요소를 활성화했을 때 스타일을 적용하는 :active 가상 클래스
+선택자
+마우스 클릭 - 두 동작으로 이루어 져 있다. 첫 번째는 마우스 버튼 다운,
+두번 째는 마우스 버튼 업
+5. 웹 요소를 초점에 맞추어졌을 때 스타일을 적용하는 :focus
+가상 클래스 선택자
+*/
+.a1{
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    font-size: 2em;
+    text-decoration: none;
+    
+}
+/* 방문 하지 않은 링크 설정 */
+.a1:link{
+    color:black;
+}
+/* 방문한 링크 설정 */
+.a1:visited{
+    color:gray;
+}
+/* 마우스 포인터를 올렸을 때와 초점을 맞췄을 때 설정 */
+.a1:hover, .a1:focus{
+    background-color: black;
+    color:white;
+}
+/* 마우스 버튼 다운 됐을 때 지정 */
+.a1:active{
+    background-color: gainsboro;
+}
+/* 
+요소 상태에 따른 가상 클래스
+- 앵커 대상에 스타일을 적용하는 :target 가상 클래스 선택자
+앵커로 연결된 부분, 즉 앵커의 목적지가 되는 부분의 스타일을
+쉽게 적용할 수 있습니다.
+
+- 요소의 사용 여부에 따라 스타일을 적용하는 :enabled와
+:disabled 가상 클래스 선택자
+해당 요소가 사용할 수 있는 상태일 때와 사용할 수 없는 상태일 때
+스타일을 쉽게 지정할 수 있습니다.
+
+- 선택한 항목의 스타일을 적용하는 :checked 가상 클래스 선택자
+라디오 버튼이나 체크 박스 버튼에서 체크된 요소의 스타일을 지정할 때
+이 선택자를 사용하면 편리합니다.
+*/
+div{
+    margin: 30px;
+}
+.d2 input:checked + label{
+    background-color: chartreuse;
+}
+/* 
+문서 구조를 사용하는 가상 클래스
+선택자 | 설명
+:first-child | 여러 요소 중에서 첫 번째 자식 요소를 선택합니다.
+:last-child | 여러 요소 중에서 마지막 자식 요소를 선택합니다.
+:only-child | 여러 요소 중에서 자식 요소가 하나일 때 선택합니다.
+:nth-child(숫자 또는 수식)|지정한 위치의 자식 요소를 선택합니다.
+A:nth-of-type(숫자 또는 수식)|A요소를 기분으로 지정한 위치의 자식
+요소를 선택합니다.
+*/
+table, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:50%;
+}
+/* 
+- nth-child 클래스
+짝수 자식 요소만 선택 :nth-child(2n), nth-child(even)
+홀수 자식 요소만 선택 :nth-child(2n+1),nth-child(odd)
+*/
+table tr:nth-child(odd) {
+    background-color: azure;
+}
+</style>
+</head>
+<body>
+    <table>
+        <tr><td>1</td><td>2</td></tr>
+        <tr><td>3</td><td>4</td></tr>
+        <tr><td>5</td><td>6</td></tr>
+        <tr><td>7</td><td>8</td></tr>
+        <tr><td>9</td><td>10</td></tr>
+    </table>
+    <div class="d2">
+        <input type="radio" name="choice">
+        <label>
+            선택 1
+        </label>
+        <input type="radio" name="choice">
+        <label>
+            선택 2
+        </label>
+    </div>
+
+    <div>
+        <a href="#6" class="a1">링크6</a>
+        <a href="#7" class="a1">링크7</a>
+    </div>
+
+    <div>
+        <input type="text">
+    </div>
+    <a href="#" target="_self">링크5</a>
+    <a href="#1" target="_blank">링크1</a>
+    <a href="#2" target="_blank">링크2</a>
+    <a href="#3">링크3</a>
+    <a href="#4">링크4</a>
+</body>
+</html>
