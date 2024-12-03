@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+//DOMContentLoaded 이벤트
+document.addEventListener("DOMContentLoaded",()=>{
+    const h102=document.querySelector(".h102")
+    h102.textContent="DOMContentLoaded 이벤트"
+})
+</script>
+</head>
+<body>
+    <h1 class="h101"></h1>
+    <h1 class="h102"></h1>
+    
+    <h1 class="h103"></h1>
+<script>
+/* querySelect() 메소드 */
+const h103=document.querySelector(".h103");
+h103.textContent="Head Title"
+h103.style.color="white"
+h103.style.backgroundColor="#5cff87"
+h103.style.padding="10px"
+/* 
+문서 객체 가져오기
+document.head - head 요소 가져오기
+document.body - body 요소 가져 오기
+document.title - title 요소 가져오기
+
+과거
+document.getElement+...
+
+document.querySelector(선택자)
+document.querySelectorAll(선택자)
+
+querySelector()메소드는 요소를 하나만 추출하고,
+querySelectorAll()메소드는 문서 객체를 여러 개 추출합니다.
+
+*/
+
+
+    const h101=document.querySelector(".h101")
+    h101.textContent="DOMContentLoaded 이벤트"
+
+/* chapter02/01-01.html */
+//01 문서 객체 모델    
+// 01-1 문서 객체 조작하기
+/* 
+html 페이지에 있는 화면을 구성하는 멤버를 요소라고
+부릅니다. 그리고 자바스크립트에서는 이를 문서 객체(
+document object)라고 부릅니다. 문서 객체를 조작한다라는
+말은 html 요소들을 조작한다는 의미입니다.
+문서 객체를 조합해서 만든 전체적인 형태를 문서 객체 모델
+(DOM, document objects model)이라고 부릅니다.
+*/
+</script>
+</body>
+</html>
