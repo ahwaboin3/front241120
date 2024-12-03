@@ -15,9 +15,109 @@ flex-grow | 공간이 남으면 플렉스 항목을 늘입니다.
 flex-shrink | 공간이 부족하면 플렉스 항목을 줄입니다.
 flex | 위의 세가지 속성을 한꺼번에 지정합니다.
 */
+/* 
+기본 크기를 지정하는 flex-basis속성
+이 속성은 플렉스 항목의 기본 크기를 지정합니다.
+플렉스 항목에 width속성이 지정되어 있다면 그 값을
+flex-basis값으로 사용합니다. 만일 width값이 없다면
+기본 값 auto인데 콘텐츠 영역만큼만 크기를 차지합니다.
+*/
+.container{
+    width:800px;
+    display: flex;
+    border:1px solid black;
+    background-color: antiquewhite;
+    gap:30px;
+}
+.box{
+    background-color: aquamarine;
+    flex-basis: 150px;
+}
+/* 
+플렉스 항목을 확장하는 flex-grow속성
+화면 너비가 큰 환경에서 접속할 경우 플렉스 컨테이너에
+플렉스 항목을 채우고도 남는 공간이 생깁니다. 이때 남은
+공간을 어떻게 나눌지를 flex-grow속성이 지정합니다.
+flex-grow의 기본값은 0입니다. 그리고 음숫값을 사용할 수
+없습니다.
+*/
+.con2{
+    width:800px;
+    display: flex;
+    border:1px solid black;
+    gap:10px;
+}
+#b1{
+    flex-grow: 1;
+}
+#b2{
+    flex-grow:1;
+}
+#b3{
+    flex-grow:2;
+}
+/* 컨테이너의 너비는 800px이므로 플렉스 항목을 배치
+하고도 170px만큼의 공간이 남습니다.(800-600-30=170)
+남는 공간을 1:1:2로 나눠서 확장을 합니다.
+*/
+/* 
+플렉스 항목을 축소하는 flex-shrink속성
+플렉스 컨테이너의 너비가 줄어들 경우 그 안에 있는 플렉스
+항목의 너비도 자연스럽게 줄어 들도록 설정할 수 있는데,
+이때 이 속성을 사용합니다. flex-shrink의 기본값은 1입니다.
+1은 컨테이너에 맞춰 플렉스 항목을 축소하죠. 0으로 지정하면
+플렉스 항목을 축소하지 않습니다. 만일 플렉스 항목마다 
+값이 다르다면 비율대로 공간을 계산합니다.
+*/
+.con3{
+    width:100%;
+    display: flex;
+    border:1px solid black;
+    gap:10px;
+}
+.box{
+    flex-basis: 300px;
+}
+#b5{flex-shrink: 1;}
+#b6{flex-shrink: 0;}
+#b7{flex-shrink: 1;}
+#b8{flex-shrink: 2;}
+/* 
+확장, 축소를 한꺼번에 지정하는 flex속성
+3개 속성의 값을 지정할 때는
+flex-grow, flex-shrink, flex-basis 순서를 지켜야합니다.
+숫자 하나만 지정한다면 grow값이 되고, 속성에 값이 2개라면
+두 번째 값에 단위가 없다면 shrink값이 되고 단위가 있다면
+basis의 값이 됩니다.
+
+flex:none
+플렉스 항목이 확장하거나 축소되지 않습니다.
+
+flex:auto
+플렉스 항목에 값이 없다면 내용만큼 영역을 차지하고 크기 값이
+있다면 그 값을 크기로 사용하고, 똑같은 비율로 확장하고
+똑같은 비율로 축소합니다.
+*/
 </style>
 </head>
 <body>
-    
+    <div class="con3">
+        <div class="box" id="b5"><p>1</p></div>
+        <div class="box" id="b6"><p>2</p></div>
+        <div class="box" id="b7"><p>3</p></div>
+        <div class="box" id="b8"><p>4</p></div>
+    </div>
+    <div class="con2">
+        <div class="box" id="b1"><p>1</p></div>
+        <div class="box" id="b2"><p>2</p></div>
+        <div class="box" id="b3"><p>3</p></div>
+        <div class="box" id="b4"><p>4</p></div>
+    </div>
+
+    <div class="container">
+        <div class="box"><p>What is Lorem Ipsum?</p></div>
+        <div class="box"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p></div>
+        <div class="box"><p>Why do we use it?</p></div>
+    </div>
 </body>
 </html>
