@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+
+<img class="rect">
+<img class="rect">
+<img class="rect">
+<img class="rect">
+
+
+<h1 id="h-style">스타일 조작하기</h1>
+
+<!-- div 태그 25개 -->
+<div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div>
+<div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div>
+<div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div>
+<div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div>
+<div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div><div class="gra"></div>
+<script>
+const divs=document.querySelectorAll(".gra")
+divs.forEach((div,index)=>{
+    const val=index*10
+    const result=255-val
+    div.style.height="10px"
+    div.style.backgroundColor=`rgb(
+        ${result},${result},${result})`
+})
+
+/* 
+3가지 방법으로 스타일의 속성을 쓸 수 있습니다.
+background-color -> backgroundColor
+text-align -> textAlign
+font-size -> fontSize
+*/
+const hStyle=document.querySelector("#h-style")
+hStyle.style.backgroundColor="yellow"
+hStyle.style["background-color"]="red"
+hStyle.style["backgroundColor"]="orange"
+
+/* 스타일 조작하기
+문서 객체의 스타일을 조작할 때는 style속성을 사용합니다.
+style속성은 객체이며, 내부에는 속성으로 css를 사용해서
+지정할 수 있는 스타일들이 있습니다. 이러한 속성에는 css
+로 입력할 때 사용하는 값과 같은 값을 입력합니다.
+*/
+const rects=document.querySelectorAll(".rect")
+rects.forEach((rect,index)=>{
+    const width=(index+1)*100
+    const src=`https://picsum.photos/${width}/400`
+    rect.setAttribute("src",src)
+})
+console.log(rects[0].getAttribute("src"))
+console.log(rects[0].getAttribute("class"))
+/* 
+속성 조작하기
+메소드 이름 | 설명
+setAttribute(속성이름, 값) | 특성 속성에 값을 지정합니다.
+getAttribute(속성 이름) | 특성 속성을 가져 옵니다.
+*/
+const d1=document.querySelector("#d1")
+const d2=document.querySelector("#d2")
+
+d1.textContent="<h1>textContent</h1>"
+d2.innerHTML="<h1>innerHTML</h1>"
+/* 
+innerText속성
+innerText 속성의 성능 문제로 textContent 속성이
+추가된 것이므로, 글자를 조작할 때는 성능이 좋은 최신의
+textContent 속성을 사용하는 것이 좋습니다.
+*/
+/* 글자 조작하기 
+속성 이름 | 설명
+textContent | 입력된 문자열을 그대로 넣습니다.
+innerHTML | 입력된 문자열을 HTML형식으로 넣습니다.
+*/
+/* 01-02.html */
+</script>
+</body>
+</html>

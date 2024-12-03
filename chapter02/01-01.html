@@ -17,9 +17,27 @@ document.addEventListener("DOMContentLoaded",()=>{
     <h1 class="h102"></h1>
     
     <h1 class="h103"></h1>
+
+    <h1 class="h104"></h1>
+    <h1 class="h104"></h1>
+    <h1 class="h104"></h1>
+    <h1 class="h104"></h1>
 <script>
+/* querySelectAll() 메소드 
+문서 객체 여러 개를 배열로 읽어들이는 함수입니다. 따라서
+내부의 요소에 접근하고 활용하려면 반복문하고 잘 맞는다.
+*/
+const h104s=document.querySelectorAll(".h104")
+console.log(h104s)
+h104s.forEach(v=>{
+    v.textContent="querySelectAll()"
+    v.style.color="white"
+    v.style.backgroundColor="#5cff87"
+    v.style.padding="10px"
+})
+
 /* querySelect() 메소드 */
-const h103=document.querySelector(".h103");
+const h103=document.querySelector(".h103")
 h103.textContent="Head Title"
 h103.style.color="white"
 h103.style.backgroundColor="#5cff87"
