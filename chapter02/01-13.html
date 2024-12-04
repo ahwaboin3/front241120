@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select multiple>
+        <option>html</option>
+        <option>css</option>
+        <option>javascript</option>
+    </select>
+    <p></p>
+<script>
+const select=document.querySelector("select")
+const p=document.querySelector("p")
+
+select.addEventListener("change",(event)=>{
+    const options=select.options
+    const list=[]
+    for(const option of options){
+        if(option.selected){
+            list.push(option.textContent)
+        }
+    }
+    p.textContent=`선택: ${list.join(",")}`
+})
+
+/* multiple select태그 */
+/* 01-13.html */
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select>
+        <option>html</option>
+        <option>css</option>
+        <option>javascript</option>
+    </select>
+    <p>선택: html</p>
+<script>
+const select=document.querySelector("select")
+const p=document.querySelector("p")
+
+select.addEventListener("change",(event)=>{
+    const options=event.currentTarget.options
+    const index=event.currentTarget.options.selectedIndex
+
+    p.textContent=`선택: ${options[index].textContent}`
+})
+
+/* 기본 select 태그 */
+/* 01-12.html */
+</script>
+</body>
+</html>
