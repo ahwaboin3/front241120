@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text">
+<h1></h1>
+<script>
+const input=document.querySelector("input")
+const h1=document.querySelector("h1")
+/* this키워드를 사용 
+화살표 함수가 아닌 function(){}형태로 함수를 선언한 경우에
+사용합니다.
+*/
+
+const listener=function(event){
+    //this === input
+    h1.textContent=this.value
+}
+
+function lis(event){
+    h1.textContent=this.value
+}
+
+input.addEventListener("keydown",listener)
+
+
+/* event.currentTarget속성을 사용 */
+/* input.addEventListener("keydown",(event)=>{
+    //event.currentTarget 속성 === input
+    h1.textContent=event.currentTarget.value
+}) */
+
+/* input.addEventListener("keydown",(event)=>{
+    h1.textContent=input.value
+}) */
+/* 
+상황에 따라서는 이벤트 리스터 내부에서 이벤트 발생 객체에
+접근할 수 없는 경우가 있습니다.
+2가지 방법으로 문제를 해결할 수 있습니다
+첫째, event.currentTarget속성을 사용합니다.
+둘째, this 키워드를 사용합니다.
+*/
+/* 이벤트 발생 객체 */
+/* 01-09.html */
+</script>
+</body>
+</html>
