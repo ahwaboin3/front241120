@@ -12,18 +12,28 @@ const ship=document.querySelector("h1")
 ship.style.position="absolute"
 const [up,right,down,left]=[38,39,40,37]
 
-let [x,y]=[0,0]
-const moveStep=10
+let [x,y]=[1,1]
+const moveStep=20
+
 const move=()=>{
     ship.style.top=`${y*moveStep}px`
-    ship.style.left=`${x}px`
+    ship.style.left=`${x*moveStep}px`
 }
+move()
 
 document.body.addEventListener("keydown",(event)=>{
     switch(event.keyCode){
         case up:
             y-=1
-        break
+            break
+        case right:
+            x+=1
+            break
+        case down:
+            y+=1
+            break
+        case left:
+            x-=1
     }
     move()
 })
