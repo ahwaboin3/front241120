@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id="add-img">이미지 추가 하기</h1>
+<button id="connect">이벤트 연결</button>
+<button id="disconnect">이벤트 제거</button>
+<p>이벤트 연결 상태:해제</p>
+<div class="con"></div>
+
+<script>
+const addImg=document.querySelector("#add-img")
+const div=document.querySelector(".con")
+const connectButton=document.querySelector("#connect")
+const disconButton=document.querySelector("#disconnect")
+const p=document.querySelector("p")
+let isConnect=false
+let imgSize=1
+
+//이벤트 리스너
+const listener=(event)=>{
+    const img=document.createElement("img")
+    img.src=`https://picsum.photos/${imgSize++}00/300`
+    div.appendChild(img)
+}
+
+//연결 버튼 클릭
+connectButton.addEventListener("click",()=>{
+    if(isConnect===false){
+        addImg.addEventListener("click",listener)
+        p.textContent="이벤트 연결 상태: 연결"
+        isConnect=true
+    }
+})
+
+//해제 버튼 클릭
+disconButton.addEventListener("click",()=>{
+    if(isConnect===true){
+        addImg.removeEventListener("click",listener)
+        p.textContent="이벤트 연결 상태: 해제"
+        isConnect=false
+    }
+})
+
+/* 
+이벤트 연결 제거하기 
+문서 객체.removeEventListener(이벤트 이름, 이벤트 리스너)
+*/
+/* 01-05.html */
+</script>
+</body>
+</html>

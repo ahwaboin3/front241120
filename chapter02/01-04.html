@@ -6,8 +6,33 @@
     <title>Document</title>
 </head>
 <body>
+<h1 id="add-img">이미지 추가 하기</h1>
+<div class="con"></div>
 <script>
-/* 이벤트 설정하기 */
+
+const addImg=document.querySelector("#add-img")
+const div=document.querySelector(".con")
+
+//document.querySelector("#add-img").addEventListener
+addImg.addEventListener("click",(event)=>{
+    const img=document.createElement("img")
+    img.src="https://picsum.photos/200/300"
+    div.appendChild(img)
+})
+
+/* 
+이벤트 설정하기 
+모든 문서 객체는 생성되거나 클릭되거나 마우스를 올리거나
+할 때 이벤트(event)라는 것이 발생합니다. 그리고 이
+이벤트가 발생할 때 실행할 함수는 addEventListener()
+메소드를 사용합니다.
+기본형
+문서 객체.addEventListener(이벤트 이름, 콜백 함수)
+여기에서 콜백 함수를 이벤트 리스너 또는 이벤트 핸들러가고
+부릅니다. 이벤트가 발생할 때 실행할 함수는 이벤트 리스너
+(event listener) 또는 이벤트 핸들러(event handler)라고
+부릅니다.
+*/
 /* 01-04.html */
 </script>
 </body>
