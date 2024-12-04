@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+<script>
+const h1=document.querySelector("h1")
+const print=(event)=>{
+    let output=""
+    output+=`alt:${event.altKey}<br>`
+    output+=`ctrl:${event.ctrlKey}<br>`
+    output+=`shift:${event.shiftKey}<br>`
+    output+=`code:${event.code}<br>`
+    output+=`keyCode:${event.keyCode}<br>`
+    h1.innerHTML=output
+}
+document.addEventListener("keyup",print)
+
+/* 키보드 키 코드 사용하기
+키보드 이벤트가 발생할 때는 이벤트 객체로 어떤 키를 눌렀는
+지와 관련된 속성들이 따라옵니다. 
+이벤트 속성 이름 | 설명
+code | 입력한 키
+keyCode | 입력한 키를 나타내는 코드 숫자
+altKey | alt키를 눌렀는지
+ctrlKey | ctrl키를 눌렀는지
+shiftKey | shift키를 눌렀는지
+altKey, ctrlKey, shiftKey속성은 해당 키를 눌렀는지
+불 자료형 값이 들어 있습니다.
+*/
+/* 01-07.html */
+</script>
+</body>
+</html>
