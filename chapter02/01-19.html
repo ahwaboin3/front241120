@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할 일 목록 만들기</title>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input id="todo">
+    <button id="add-button">추가하기</button>
+    <div id="todo-list"></div>
+<script>
+    //문서 객체를 가져오기
+    const input=document.querySelector("#todo")
+    const todoList=document.querySelector("#todo-list")
+    const addButton=document.querySelector("#add-button")
+    //key 값 변수
+    let keyCount=0
+    
+    //할일 추가 하기
+    const addTodo=()=>{
+        //할일 요소 만들기
+        const item=document.createElement("div")
+        const checkbox=document.createElement("input")
+        const text=document.createElement("span")
+        const button=document.createElement("button")
+        
+        //할일 객체를 식별할 키를 생성합니다.
+        const key=keyCount
+        keyCount+=1
+        
+        //item 객체에 속성을 부여하고 완성
+        item.setAttribute("data-key",key)
+        item.appendChild(checkbox)
+        item.appendChild(text)
+        item.appendChild(button)
+        todoList.appendChild(item)
+
+        //checkbox 완성 하기
+        checkbox.type="checkbox"
+        checkbox.addEventListener("change",(event)=>{
+            item.style.textDecoration
+                =event.currentTarget.checked?"line-through":""
+        })
+        
+        //할일 문자열 넣기
+        text.textContent=input.value
+
+        //삭제 하기 버튼 만들기
+        button.textContent="제거하기"
+        button.addEventListener("click",()=>{
+            removeTodo(key)
+        })
+    }
+
+    const removeTodo=(key)=>{
+        const item=document.querySelector(`[data-key="${key}"]`)
+        todoList.removeChild(item)
+    }
+
+    // 추가하기 기능
+    addButton.addEventListener("click",addTodo)
+</script>
+</body>
+</html>
