@@ -20,6 +20,12 @@
     
     //할일 추가 하기
     const addTodo=()=>{
+        //공백만 입력 했을 경우 체크하는 기능
+        if(input.value.trim()===""){
+            alert("할 일을 입력해주세요.")
+            return
+        }
+
         //할일 요소 만들기
         const item=document.createElement("div")
         const checkbox=document.createElement("input")
@@ -52,6 +58,9 @@
         button.addEventListener("click",()=>{
             removeTodo(key)
         })
+
+        //입력 양식을 비운다
+        input.value=""
     }
 
     const removeTodo=(key)=>{
@@ -61,6 +70,12 @@
 
     // 추가하기 기능
     addButton.addEventListener("click",addTodo)
+    //엔터키로 추가하기 기능
+    input.addEventListener("keyup",(event)=>{
+        if(event.keyCode===13){
+            addTodo()
+        }
+    })
 </script>
 </body>
 </html>
