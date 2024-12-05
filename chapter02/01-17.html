@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://placecats.com/neo_banana/300/200">
+<script>
+const imgs=document.querySelectorAll("img")
+imgs.forEach((img)=>{
+    img.addEventListener("contextmenu",(event)=>{
+        //기본 이벤트 제거하기
+        event.preventDefault()
+    })
+})
+
+//이미지 마우스 오른쪽 버튼 클릭 막기
+
+//기본 이벤 막기
+/* 마우스 오른쪽 클릭하면 메뉴가 나오는데 이것을
+컨텍스트 메뉴(context menu)를 출력합니다. 웹 브라우저가
+기본적으로 처리해주는 것을 기본 이벤트라고 부릅니다. */
+</script>
+</body>
+</html>
